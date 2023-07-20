@@ -1,4 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 tr,td{
     text-align: center;
     align-items: center;
+}
+.action-quantity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }

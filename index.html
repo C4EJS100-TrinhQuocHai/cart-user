@@ -62,10 +62,11 @@
         object-fit: contain;
     }
     .header__cart{
-        width: 150px;
+        width: 200px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         cursor: pointer;
+        margin: 20px;
     }
     .person{
      
@@ -81,6 +82,23 @@
         right: 0;
         top: 0;
     }
+    .header__checkout{
+        position: relative;
+        background-color: aqua;
+    }
+    .circle{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        position: absolute;
+        bottom: 5px;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: center;
+
+    }
+
 </style>
 
 <body>
@@ -90,8 +108,10 @@
             LOGO
         </div>
         <div class="header__cart">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined header__checkout ">
                 shopping_cart_checkout
+                
+                <span class="circle">1</span>
             </span>
             <a class="login" href="./html/login.html">Login </a>
             <a class="register" href="./html/register.html">Register </a>
@@ -99,7 +119,7 @@
                 person
             </span>
             <div class="infor__list" style="display: none;">
-                <div class="infor__logout">
+                <div onclick="logOut()" class="infor__logout logout">
                     logout
                 </div>
                 <div class="infor__cart">

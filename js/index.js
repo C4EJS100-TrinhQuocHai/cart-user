@@ -76,6 +76,7 @@ function addToCart(idProduct) {
                 }
           }  
               users[i].cart.push(productDetail[0]);
+            showQuantity();
               localStorage.setItem("users",JSON.stringify(users))
           
         }
@@ -90,4 +91,24 @@ function clickUser() {
         document.getElementsByClassName("infor__list")[0].style.display = "none";
     })
 }
-
+// hàm tăng số lượng giỏ sản phẩm trong giỏ hàng
+function showQuantity() {
+    if(checkLogin==null){
+        document.getElementsByClassName("circle")[0].innerHTML=0;
+        return;
+    }
+    for (let i = 0; i < users .length; i++) {
+        if (users[i].idUser == checkLogin){
+             document.getElementsByClassName("circle")[0].innerHTML=users[i].cart.length;
+        }
+    }
+}
+showQuantity();
+// function logout
+function logOut(){
+    let confirmLogout = confirm("bạn có muốn thoát hay không?");
+    if (confirmLogout){
+        localStorage.removeItem("checkLogin");
+        window.location.reload();
+    }
+}
